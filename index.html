@@ -1,0 +1,202 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>KickCraft</title>
+
+    <link rel="stylesheet"
+    href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+
+        <div class="logo">KickCraft</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sneakers">Sneakers</a></li>
+            <li><a href="#men">Men</a></li>
+            <li><a href="#women">Women</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <button id="modeBtn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+    </nav>
+
+
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h1>Modern Fashion Store</h1>
+
+            <p>
+                Sneakers, tees and jeans with premium streetwear style.
+            </p>
+
+            <a href="#sneakers">
+                <button>Shop Now</button>
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Sneakers -->
+    <section class="products" id="sneakers">
+
+        <h2>Sneakers Collection</h2>
+
+        <div class="product-card">
+
+            <img src="images/shoe1.png"
+            alt="Sneaker">
+
+            <h3>Air Jordan Street</h3>
+
+            <p class="price">₹3999</p>
+
+            <button class="cart-btn"
+            onclick="addToCart('Air Jordan Street',3999)">
+                Add To Cart
+            </button>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img src="images/shoe2.png"
+            alt="Sneaker">
+
+            <h3>Urban Runner</h3>
+
+            <p class="price">₹4599</p>
+
+            <button class="cart-btn"
+            onclick="addToCart('Urban Runner',4599)">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Men -->
+    <section class="products" id="men">
+
+        <h2>Men Collection</h2>
+
+        <div class="product-card">
+
+            <img src="images/men-tee.png"
+            alt="Men Tee">
+
+            <h3>Men Basic Tee</h3>
+
+            <p class="price">₹999</p>
+
+            <button class="cart-btn"
+            onclick="addToCart('Men Basic Tee',999)">
+                Add To Cart
+            </button>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img src="images/men-jeans.png"
+            alt="Men Jeans">
+
+            <h3>Men Cargo Jeans</h3>
+
+            <p class="price">₹1799</p>
+
+            <button class="cart-btn"
+            onclick="addToCart('Men Cargo Jeans',1799)">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Women -->
+    <section class="products" id="women">
+
+        <h2>Women Collection</h2>
+
+        <div class="product-card">
+
+            <img src="images/women-tee.png"
+            alt="Women Tee">
+
+            <h3>Women Oversized Tee</h3>
+
+            <p class="price">₹1199</p>
+
+            <button class="cart-btn"
+            onclick="addToCart('Women Oversized Tee',1199)">
+                Add To Cart
+            </button>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img src="images/women-jeans.png"
+            alt="Women Jeans">
+
+            <h3>Women Blue Jeans</h3>
+
+            <p class="price">₹1499</p>
+
+            <button class="cart-btn"
+            onclick="addToCart('Women Blue Jeans',1499)">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 KickCraft. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

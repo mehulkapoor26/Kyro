@@ -1,0 +1,179 @@
+<!-- cart.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Cart</title>
+
+    <link rel="stylesheet"
+    href="style.css">
+
+</head>
+<body>
+
+    <section class="products">
+
+
+        <!-- Back Button -->
+
+        <a href="index.html">
+
+            <button id="back-btn">
+
+                ← Back To Home
+
+            </button>
+
+        </a>
+
+
+
+        <!-- Heading -->
+
+        <h2>Your Cart</h2>
+
+
+
+        <!-- Cart Items -->
+
+        <div id="cart-items"></div>
+
+
+
+        <!-- Payment Button -->
+
+        <button id="pay-btn"
+        onclick="proceedPayment()">
+
+            Proceed To Payment
+
+        </button>
+
+    </section>
+
+
+
+    <script>
+
+        // Cart Array
+        let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+
+
+        // Cart Container
+        const cartItems =
+        document.getElementById("cart-items");
+
+
+
+        // Display Cart
+        function displayCart(){
+
+            cartItems.innerHTML = "";
+
+
+
+            cart.forEach((item,index) => {
+
+                cartItems.innerHTML += `
+
+                <div class="product-card">
+
+                    <h3>${item.name}</h3>
+
+                    <p class="price">
+
+                        ₹${item.price}
+
+                    </p>
+
+                    <button class="remove-btn"
+                    onclick="removeItem(${index})">
+
+                        Remove
+
+                    </button>
+
+                </div>
+                `;
+            });
+        }
+
+
+
+        // Remove Item
+        function removeItem(index){
+
+            cart.splice(index,1);
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            displayCart();
+        }
+
+
+
+        // Payment
+        function proceedPayment(){
+
+            if(cart.length > 0){
+
+                localStorage.removeItem("cart");
+
+
+
+                document.body.innerHTML = `
+
+                <div class="payment-success">
+
+                    <h1>
+
+                        Payment Successful ✅
+
+                    </h1>
+
+                    <p>
+
+                        Thank you for shopping with KickCraft.
+
+                    </p>
+
+                    <a href="index.html">
+
+                        <button class="home-btn">
+
+                            Go To Home
+
+                        </button>
+
+                    </a>
+
+                </div>
+                `;
+            }
+
+            else{
+
+                alert("Your cart is empty");
+            }
+        }
+
+
+
+        // Initial Display
+        displayCart();
+
+    </script>
+
+</body>
+</html>

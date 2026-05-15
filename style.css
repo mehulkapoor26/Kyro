@@ -1,0 +1,460 @@
+/* style.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+/* Navbar */
+nav{
+    width:100%;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:black;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#00ff88;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:17px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00ff88;
+}
+
+nav button{
+    padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    background:#00ff88;
+    cursor:pointer;
+}
+
+/* Hero */
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('images/banner.jpg') center/cover no-repeat;
+}
+
+.hero-text h1{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero-text button{
+    padding:15px 30px;
+    border:none;
+    border-radius:10px;
+    background:#00ff88;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* Products */
+.products{
+    padding:80px 60px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.products h2{
+    grid-column:1/-1;
+    text-align:center;
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.product-card{
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+}
+
+.product-card img{
+    width:100%;
+    border-radius:15px;
+}
+
+.product-card h3{
+    margin:15px 0;
+}
+
+.price{
+    color:#00ff88;
+    margin-bottom:15px;
+    font-size:20px;
+}
+
+.cart-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#00ff88;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    background:black;
+}
+
+/* Login */
+.login-container{
+    width:400px;
+    margin:100px auto;
+    background:#1c1c1c;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.login-container h1{
+    margin-bottom:20px;
+}
+
+.login-container input{
+    width:100%;
+    padding:14px;
+    margin:15px 0;
+    border:none;
+    border-radius:10px;
+}
+
+.login-container button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#00ff88;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.login-container a{
+    color:#00ff88;
+}
+
+/* Light Mode */
+.light-mode{
+    background:white;
+    color:black;
+}
+
+.light-mode nav{
+    background:#f1f1f1;
+}
+
+.light-mode nav ul li a{
+    color:black;
+}
+
+.light-mode .product-card{
+    background:#f1f1f1;
+    color:black;
+}
+
+.light-mode footer{
+    background:#f1f1f1;
+    color:black;
+}
+
+.light-mode .login-container{
+    background:#f1f1f1;
+    color:black;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+        padding:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero-text h1{
+        font-size:40px;
+    }
+
+    .hero-text p{
+        font-size:16px;
+    }
+
+    .products{
+        padding:50px 20px;
+    }
+
+    .login-container{
+        width:90%;
+    }
+}
+/* Remove Button */
+
+.remove-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:red;
+    color:white;
+    cursor:pointer;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+
+
+/* Remove Button */
+
+.remove-btn{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:red;
+
+    color:white;
+
+    cursor:pointer;
+
+    margin-top:10px;
+
+    font-weight:bold;
+}
+
+
+
+/* Payment Button */
+
+#pay-btn{
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#00ff88;
+
+    color:black;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:30px;
+}
+/* Remove Button */
+
+.remove-btn{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:red;
+
+    color:white;
+
+    cursor:pointer;
+
+    margin-top:10px;
+
+    font-weight:bold;
+}
+
+
+
+/* Payment Button */
+
+#pay-btn{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#00ff88;
+
+    color:black;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:20px;
+}
+
+
+
+/* Payment Success */
+
+.payment-success{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+
+
+.payment-success h1{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+}
+
+
+
+.payment-success p{
+
+    font-size:20px;
+
+    margin-bottom:30px;
+}
+
+
+
+/* Home Button */
+
+.home-btn{
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#00ff88;
+
+    color:black;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+/* Back Button */
+
+#back-btn{
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#444;
+
+    color:white;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+
+    font-size:15px;
+
+    font-weight:bold;
+}
+/* Small Home Button */
+
+.small-home-btn{
+
+    padding:8px 16px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#444;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+}
