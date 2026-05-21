@@ -1,75 +1,142 @@
-// Dark Mode
-const modeBtn = document.getElementById("modeBtn");
-if(modeBtn){
+// script.js
 
-    modeBtn.addEventListener("click", () => {
+// Dark Mode Optional
+const modeBtn =
+document.getElementById("modeBtn");
 
-        document.body.classList.toggle("light-mode");
-     });
-}
-// Cart System
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-function addToCart(name, price){
 
-    const product = {
+
+// Add To Cart
+
+function addToCart(name,price){
+
+    let cart =
+    JSON.parse(localStorage.getItem("cart"))
+    || [];
+
+    cart.push({
         name:name,
         price:price
-    };
+    });
 
-    cart.push(product);
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    alert(name + " added to cart");
+    alert(name + " added to cart!");
 }
+
+
+
 // Signup
+
 function signupUser(){
 
-    let username =
+    const username =
     document.getElementById("newUsername").value;
 
-    let password =
+    const password =
     document.getElementById("newPassword").value;
+
     if(username === "" || password === ""){
 
         alert("Please fill all fields");
 
         return;
     }
-// Save Data
-    localStorage.setItem("username", username);
 
-    localStorage.setItem("password", password);
+    localStorage.setItem(
+        "username",
+        username
+    );
 
-    alert("Account Created Successfully");
+    localStorage.setItem(
+        "password",
+        password
+    );
 
-    window.location.href = "login.html";
+    alert("Account Created Successfully!");
+
+    window.location.href =
+    "login.html";
 }
+
+
+
 // Login
+
 function loginUser(){
 
-    let username =
+    const username =
     document.getElementById("username").value;
 
-    let password =
+    const password =
     document.getElementById("password").value;
 
-// Get Stored Data
-    let savedUsername =
+    const savedUser =
     localStorage.getItem("username");
 
-    let savedPassword =
+    const savedPass =
     localStorage.getItem("password");
+
     if(
-        username === savedUsername &&
-        password === savedPassword
+        username === savedUser &&
+        password === savedPass
     ){
 
-        alert("Login Successful");
+        alert("Login Successful!");
 
-        window.location.href = "index.html";
+        window.location.href =
+        "index.html";
     }
-else{
-        alert("Incorrect Username or Password");
+
+    else{
+
+        alert("Invalid Credentials");
     }
 }
+// Theme Toggle
+
+const themeToggle =
+document.getElementById("theme-toggle");
+
+
+// Load Saved Theme
+
+if(localStorage.getItem("theme") === "light"){
+
+    document.body.classList.add("light-mode");
+
+    themeToggle.innerHTML =
+    '<i class="fa-solid fa-sun"></i>';
+}
+
+
+
+// Toggle Theme
+
+themeToggle.addEventListener("click",()=>{
+
+    document.body.classList.toggle("light-mode");
+
+
+
+    // Save Theme
+
+    if(document.body.classList.contains("light-mode")){
+
+        localStorage.setItem("theme","light");
+
+        themeToggle.innerHTML =
+        '<i class="fa-solid fa-sun"></i>';
+    }
+
+    else{
+
+        localStorage.setItem("theme","dark");
+
+        themeToggle.innerHTML =
+        '<i class="fa-solid fa-moon"></i>';
+    }
+});
